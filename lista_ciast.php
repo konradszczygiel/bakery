@@ -2,8 +2,9 @@
 include "header.html";
 
  ?>
+ 
 
- <form class="form" action = "save.php" method = "post">
+ <form class="form" action = "save.php" method = "POST">
  	<table class = "table">
 
  		<tr>
@@ -21,6 +22,16 @@ include "header.html";
  			</td>
  			<td>
  				<input class="form-control" type = "int" name = "number">
+ 			</td>
+
+ 		</tr>
+
+ 		<tr>
+ 			<td>
+ 				price
+ 			</td>
+ 			<td>
+ 				<input class="form-control" type = "int" name = "price">
  			</td>
 
  		</tr>
