@@ -23,7 +23,8 @@ $header = '
       <th>cakes name</th>
       <th>what left</th>
       <th>price</th>
-      <th>How many pieces you would like to buy </th>
+      <th>How many pieces you sell </th>
+    <th>Delete</th>
     </tr>';
 
 
@@ -50,6 +51,7 @@ $select = '
     <td>' . $data['pieces'] . '</td>
     <td class="value">' . $data['value'] . '</td>
      <td>' . $select . '</td>
+     <td> <a class="delete_link" href="delete.php?id_cake='.$data['id_cake'].'">X</a> </td>
 
        </tr>';
    }
