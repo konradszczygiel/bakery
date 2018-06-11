@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $mysqli = new mysqli('127.0.0.1' , 'root' , '0022' , 'BYKERY');
 
 //$cake
@@ -21,23 +23,28 @@ $no_pieces = $data['pieces'];
 
 $no_pieces = $no_pieces - $cake_amount;
 
-
-if ($no_pieces<=(-1))
-	{
-
-		header('location: pieces_error.php');
-	}
-
-
-$sql = 'UPDATE CAKES  SET pieces = ' . $no_pieces . ' WHERE id_cake =' . $id;
-$status = $mysqli->query($sql);
-
-
-if ($status)
+if ($no_pieces < 0 )
 {
+	$message = "You can not sell more cake than you have";
+	
+	$_SESSION['error_message'] = $message;
 
 	header ('location: index.php');
+
+} else {
+	$sql = 'UPDATE CAKES  SET pieces = ' . $no_pieces . ' WHERE id_cake =' . $id;
+	$status = $mysqli->query($sql);
+
+
+	if ($status)
+	{
+
+		header ('location: index.php');
+	}
+
 }
+
+
 
 
 ?>

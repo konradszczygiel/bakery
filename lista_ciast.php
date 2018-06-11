@@ -1,7 +1,21 @@
 <?php 
 include "header.html";
 
- ?>
+$mysqli = new mysqli('127.0.0.1' , 'root' , '0022' , 'BYKERY');
+
+$sql = "SELECT * FROM cake";
+
+$results = $mysqli->query($sql);
+
+$cakes = [];
+
+while ( $row = $results->fetch_array(MYSQLI_ASSOC)) {
+
+	$cakes[] = $row;
+
+}
+
+?>
  
 
  <form class="form" action = "save.php" method = "POST">
@@ -9,10 +23,17 @@ include "header.html";
 
  		<tr>
  			<td>
- 				name
+ 				Wybierz ciasto
  			</td>
  			<td>
- 				<input class="form-control" type ="text" name = "name">
+ 				<select name="cake_id">
+ 					<?php
+ 						foreach ($cakes as $cake_id => $cake) {
+ 							$option = '<option value="'.$cake['id'].'">'.$cake['name'].'</option>';
+ 							echo $option;
+ 						}
+ 					?>
+ 				</select>
  			</td>
  		</tr>
 
@@ -21,7 +42,7 @@ include "header.html";
  				numbers of pieces
  			</td>
  			<td>
- 				<input class="form-control" type = "int" name = "number">
+ 				<input class="form-control" type = "int" name = "pieces">
  			</td>
 
  		</tr>
