@@ -12,7 +12,7 @@ $id = $_GET['cake_id'];
 $cake_amount = $_GET['cake_amount'];
 
 
-$sql = 'SELECT pieces FROM CAKES WHERE id_cake = ' . $id;
+$sql = 'SELECT pieces FROM product WHERE id = ' . $id;
 
 
 $results = $mysqli->query($sql);
@@ -32,7 +32,7 @@ if ($no_pieces < 0 )
 	header ('location: index.php');
 
 } else {
-	$sql = 'UPDATE CAKES  SET pieces = ' . $no_pieces . ' WHERE id_cake =' . $id;
+	$sql = 'UPDATE product  SET pieces = ' . $no_pieces . ' WHERE id =' . $id;
 	$status = $mysqli->query($sql);
 
 

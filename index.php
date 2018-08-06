@@ -46,7 +46,7 @@ while ($data = $results->fetch_array(MYSQLI_ASSOC) ) {
 $select = '
 <form action="action_page.php" id="carform">
    
-    <select name="carlist" form="carform" class="cake_selector" data-id="'.$data['cake_id'].'">
+    <select name="carlist" form="carform" class="cake_selector" data-id="'.$data['product_id'].'">
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -60,7 +60,7 @@ $select = '
     <td>' . $data['pieces'] . '</td>
     <td class="value">' . $data['price'] . '</td>
      <td>' . $select . '</td>
-     <td> <a class="delete_link" href="delete.php?cake_id='.$data['cake_id'].'">X</a> </td>
+     <td> <a class="delete_link" href="delete.php?cake_id='.$data['product_id'].'">X</a> </td>
 
        </tr>';
    }

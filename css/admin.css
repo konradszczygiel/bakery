@@ -1,18 +1,67 @@
+#container{
+	background-color: rgb(70,61,65);
+	font-size: 30px;
+	padding-bottom: 50px;
+	text-align: center;
+	text-decoration: none;
+}
 
+
+.Admin{
+	margin-top: 25px;
+	font-size: 31px;
+	margin-right: : 25px;
+	padding: 30px;
+	border-color: red;
+	color: white;
+	background-color: gray;
+
+}
+
+.lista_ciast {
+	margin-top: 25px;
+	font-size: 31px;
+	margin-left: 25px;
+	padding: 30px;
+	border-color: red;
+	color: white;
+	background-color: gray;
+}
 
 .name {
-	font-size: 24px;
+	font-size: 35px;
+	text-align: center;
+	background-color: yellow;
+	padding: 20px;
 }
 
 .price {
 
-	font-size: 22px;
+	font-size: 25px;
+	background-color: black;
+	color: white;
+	padding: 20px;
 }
 
+.save{
+	margin-top: 10px;
+	color: white;
+	font-size: 20px;
+	padding: 10px;
+	background-color:  green;
+}
 
+.delete {
+	padding: 12px;
+	background-color: red;
+	font-size: 18px;
+	color: black;
+}
 
 textarea {
 
 	width: 100%;
-	height: 350px;
+	height: 320px;
+	font-size: 20px;
 }
+

@@ -16,6 +16,6 @@
 
 <a class='press' href="index.php">PRESS</a>
 
-header ("Location: index.php");
+//header ("Location: index.php");
 ?>
 

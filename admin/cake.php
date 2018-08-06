@@ -36,15 +36,17 @@ while ( $row = $results->fetch_array(MYSQLI_ASSOC)) {
 
 
 ?>
-
-<nav class="navbar navbar-light bg-light">
-  <form class="form-inline">
-    <button class="btn btn-outline-success" type="button">Admin</button>
-    <button class="btn btn-sm btn-outline-secondary" type="button">Lista ciast</button>
-  </form>
-</nav>
+<div id = "container">
+	<div><a class='Admin' href="index.php">ADMIN</a>
+	<a class='lista_ciast' href="lista_ciast_admin.php">LISTA CIAST</a>
+	</DIV>
+</div>>
 
 
+
+<form  action="save_cake.php"  method="POST">
+
+<input type="hidden" name="id_cake" value='<?php echo $cake_id;?>'
 
 <div class="container">
   <div class="row">
@@ -69,7 +71,7 @@ while ( $row = $results->fetch_array(MYSQLI_ASSOC)) {
   </div>
    <div class="row">
     <div class="col-md-6">
-      <textarea>
+      <textarea name="receipe">
 
 
       	<?php  
@@ -79,7 +81,7 @@ while ( $row = $results->fetch_array(MYSQLI_ASSOC)) {
       </textarea>
     </div>
     <div class="col-md-6">
-      <textarea>
+      <textarea name="ingredients">
 
       	<?php  
         echo $cake[0]['ingredients'] ;
@@ -87,5 +89,23 @@ while ( $row = $results->fetch_array(MYSQLI_ASSOC)) {
         
       </textarea>
     </div>
-  </div>
+  </div> 
+
+  <div class="row">
+  	<div class="col-md-10">
+
+			<input type="submit" class="save" name="Send"  value="save">
+	</div>
+
+	<div class="col-md-2">
+		
+			<input type="submit" class="delete"  name="delete"  value="delete">
+		
+	</div>
+  </row>
+
 </div>
+
+
+</form>
+
